@@ -39,13 +39,34 @@ function App() {
       <Box
         sx={{
           minHeight: "100vh",
-          background:
-            "linear-gradient(135deg, #fdfbfb 0%, #fbe4ff 40%, #e0d4fc 100%)",
+
+          //   background: `
+          //   radial-gradient(circle at 0% 0%, rgba(255, 165, 0, 0.15) 0%, transparent 35%), /* Light Orange top-left */
+          //   radial-gradient(circle at 100% 0%, rgba(173, 216, 230, 0.15) 0%, transparent 50%), /* Light Blue top-right */
+          //   radial-gradient(circle at 0% 100%, rgba(255, 192, 203, 0.15) 0%, transparent 50%), /* Light Pink bottom-left */
+          //   radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0%, transparent 35%) /* White center, fades out */
+          // `,
+
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           px: 2,
+          backgroundImage: "url(/hero-bg.png)",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/image.jpg')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            pointerEvents: "none",
+            zIndex: "-2"
+          },
         }}
       >
         {/* Heading */}
@@ -139,15 +160,18 @@ function App() {
                 <Button
                   variant="contained"
                   sx={{
-                    background: "linear-gradient(to right, #7f00ff, #e100ff)",
+                    background:
+                      "linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)",
                     color: "#fff",
                     px: 4,
                     borderRadius: "999px",
                     textTransform: "none",
-                    boxShadow: "0 4px 10px rgba(127, 0, 255, 0.3)",
+                    transition: 'all 0.5s ease-in-out',
                     "&:hover": {
-                      background: "linear-gradient(to right, #6a00e0, #c800e8)",
+                      background: "linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)",
+                      
                     },
+                    boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;",
                   }}
                 >
                   Generate
@@ -258,7 +282,7 @@ function App() {
         </Card>
       </Box>
       <FeaturesSection />
-      <Footer/>
+      <Footer />
     </>
   );
 }

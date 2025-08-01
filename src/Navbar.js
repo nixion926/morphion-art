@@ -64,7 +64,7 @@ function Navbar() {
             {navItems.map((text) => (
               <a
                 key={text}
-                href="#"
+                href="https"
                 style={{ textDecoration: "none" }}
                 onClick={(e) => e.preventDefault()}
               >
@@ -92,6 +92,9 @@ function Navbar() {
                   color: "#000",
                   textTransform: "none",
                   fontWeight: "bold",
+                  borderRadius: 999,
+                  background: "white",
+                  paddingX: "20px"
                 }}
               >
                 Log in
@@ -99,15 +102,16 @@ function Navbar() {
               <Button
                 variant="contained"
                 sx={{
-                  background: "linear-gradient(to right, #7f00ff, #e100ff)",
+                  background: 'linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)',
                   color: "#fff",
                   borderRadius: 999,
                   px: 3,
                   fontWeight: "bold",
                   textTransform: "none",
                   "&:hover": {
-                    background: "linear-gradient(to right, #6a00e0, #c800e8)",
+                    background: 'linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)',
                   },
+                  boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;"
                 }}
               >
                 Get Started

@@ -25,12 +25,8 @@ function Footer() {
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
-        background: `
-          radial-gradient(circle at 0% 0%, rgba(255, 165, 0, 0.15) 0%, transparent 35%), /* Light Orange top-left */
-          radial-gradient(circle at 100% 0%, rgba(173, 216, 230, 0.15) 0%, transparent 35%), /* Light Blue top-right */
-          radial-gradient(circle at 0% 100%, rgba(255, 192, 203, 0.15) 0%, transparent 35%), /* Light Pink bottom-left */
-          radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0%, transparent 50%) /* White center, fades out */
-        `,
+        background: "url(/footer-bg.png)",
+        backgroundSize : "contain"
       }}
     >
       <Container maxWidth="lg">

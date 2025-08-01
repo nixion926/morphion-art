@@ -145,12 +145,14 @@ function FeaturesSection() {
                 variant="contained"
                 sx={{
                   mt: 2,
-                  background: "linear-gradient(to right, #7f00ff, #e100ff)",
+                  background:
+                    "linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)",
                   color: "#fff",
                   borderRadius: 999,
                   textTransform: "none",
                   fontWeight: "bold",
                   px: 4,
+                  boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;",
                 }}
               >
                 {feature.button}
@@ -173,6 +175,8 @@ function FeaturesSection() {
                 width: "100%",
                 maxWidth: 500,
                 borderRadius: 4,
+               
+                
               }}
             />
           </Grid>
@@ -192,10 +196,12 @@ function FeaturesSection() {
           <Box
             component="span"
             sx={{
-              background: "linear-gradient(to right, #a18cd1, #fbc2eb)",
+              background:
+                "linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               display: "inline",
+              boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;",
             }}
           >
             Users Says
@@ -259,12 +265,14 @@ function FeaturesSection() {
           variant="contained"
           sx={{
             mt: 4,
-            background: "linear-gradient(to right, #7f00ff, #e100ff)",
+            background:
+              "linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)",
             color: "#fff",
             borderRadius: 999,
             px: 4,
             textTransform: "none",
             fontWeight: "bold",
+            boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;",
           }}
         >
           See More Reviews
@@ -274,9 +282,20 @@ function FeaturesSection() {
         id="services-explore"
         sx={{
           mt: 12,
-          background:
-            "repeating-linear-gradient(150deg, transparent 0, rgba(255, 255, 255, 0.2) 2px, transparent 4px), linear-gradient(to right, #e6e6fa, #f0f8ff, #e0ffff)",
+          background: "#F5F7F9",
           borderRadius: "16px",
+          position: "relative",
+          "&::after": {
+            content: '""',
+            position: "absolute",
+            inset: 0,
+            backgroundImage: "url('/hero-bg.png')",
+            backgroundSize: "contain",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            pointerEvents: "none",
+            zIndex: "2",
+          },
         }}
       >
         <Box sx={{ py: 8, textAlign: "center" }}>
@@ -289,6 +308,7 @@ function FeaturesSection() {
                 background: "linear-gradient(to right, #a18cd1, #fbc2eb)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
+                boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;",
               }}
             >
               Present Smarter?
@@ -316,12 +336,20 @@ function FeaturesSection() {
             variant="contained"
             sx={{
               mt: 2,
-              background: "linear-gradient(to right, #7f00ff, #e100ff)",
+              background:
+                "linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)",
               color: "#fff",
               borderRadius: 999,
               textTransform: "none",
               fontWeight: "bold",
               px: 4,
+              boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;",
+
+              "&:hover": {
+                background:
+                  "linear-gradient(90deg, #FFBCFA 0%, #5C83F4 50%, #724AFE 100%)",
+                opacity: 0.9,
+              },
             }}
           >
             Get Started
