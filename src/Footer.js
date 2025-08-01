@@ -26,7 +26,8 @@ function Footer() {
         alignItems: "center",
         textAlign: "center",
         background: "url(/footer-bg.png)",
-        backgroundSize : "contain"
+        backgroundSize : "cover",
+        backgroundRepeat : "no-repeat"
       }}
     >
       <Container maxWidth="lg">

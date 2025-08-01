@@ -68,6 +68,20 @@ const testimonials = [
     avatar: "/user1.jpg",
     rating: 5,
   },
+  {
+    name: "Dianne M. Mason",
+    content:
+      "I created an entire client pitch in under 10 minutes. The AI nailed both the content and the design — it's seriously impressive",
+    avatar: "/user1.jpg",
+    rating: 5,
+  },
+  {
+    name: "Dianne M. Mason",
+    content:
+      "I created an entire client pitch in under 10 minutes. The AI nailed both the content and the design — it's seriously impressive",
+    avatar: "/user1.jpg",
+    rating: 5,
+  },
 ];
 
 function FeaturesSection() {
@@ -175,8 +189,6 @@ function FeaturesSection() {
                 width: "100%",
                 maxWidth: 500,
                 borderRadius: 4,
-               
-                
               }}
             />
           </Grid>
@@ -184,13 +196,14 @@ function FeaturesSection() {
       ))}
 
       {/* Testimonials */}
-      <Box id="testimonials" sx={{ mt: 12 }}>
+      <Box id="testimonials" sx={{ mt: 12, width: "100%" }}>
         <Typography
           variant="caption"
           sx={{ fontWeight: "bold", color: "text.secondary" }}
         >
           💬 Wall of Love
         </Typography>
+
         <Typography variant="h5" sx={{ fontWeight: "bold", mt: 1 }}>
           Hear What Our{" "}
           <Box
@@ -201,12 +214,13 @@ function FeaturesSection() {
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               display: "inline",
-              boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;",
+              boxShadow: "1px 6px 8px 0px #FFFFFF52 inset",
             }}
           >
             Users Says
           </Box>
         </Typography>
+
         <Typography
           variant="body2"
           sx={{ maxWidth: 600, mx: "auto", mb: 4, color: "text.secondary" }}
@@ -215,50 +229,82 @@ function FeaturesSection() {
           the way people create and deliver ideas.
         </Typography>
 
+        {/* WRAPPER with fade gradients */}
         <Box
           sx={{
-            display: "flex",
-            gap: 3,
-            overflowX: "auto",
-            py: 2,
-            px: 1,
-            scrollSnapType: "x mandatory",
-            scrollbarWidth: "none",
-            "&::-webkit-scrollbar": {
-              display: "none",
+            position: "relative",
+            px: 4,
+            "&::before, &::after": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              width: 60,
+              height: "100%",
+              zIndex: 2,
+              pointerEvents: "none",
+            },
+            "&::before": {
+              left: 0,
+              background:
+                "linear-gradient(to right, #fff 0%, transparent 100%)",
+            },
+            "&::after": {
+              right: 0,
+              background: "linear-gradient(to left, #fff 0%, transparent 100%)",
             },
           }}
         >
-          {testimonials.map((review, idx) => (
-            <Box
-              key={idx}
-              sx={{
-                minWidth: 300,
-                maxWidth: 320,
-                px: 3,
-                py: 5,
-                borderRadius: 5,
-                boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
-                backgroundColor: "#fff",
-                scrollSnapAlign: "start",
-                transform: `rotate(${idx % 2 === 0 ? "-2deg" : "2deg"})`,
-              }}
-            >
-              <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
-                <Avatar
-                  src={review.avatar}
-                  sx={{ width: 32, height: 32, mr: 1 }}
-                />
-                <Typography variant="body2" fontWeight="bold">
-                  {review.name}
+          {/* Scrollable card container */}
+          <Box
+            sx={{
+              display: "flex",
+              gap: 3,
+              overflowX: "auto",
+              py: 2,
+              px: 1,
+              scrollSnapType: "x mandatory",
+              scrollBehavior: "smooth",
+              scrollbarWidth: "none",
+              "&::-webkit-scrollbar": {
+                display: "none",
+              },
+            }}
+          >
+            {testimonials.map((review, idx) => (
+              <Box
+                key={idx}
+                sx={{
+                  minWidth: 300,
+                  maxWidth: 320,
+                  px: 3,
+                  py: 5,
+                  borderRadius: 5,
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.1)",
+                  backgroundColor: "#fff",
+                  scrollSnapAlign: "start",
+                  transform: `rotate(${idx % 2 === 0 ? "-2deg" : "2deg"})`,
+                  transition: "transform 0.3s ease",
+                  "&:hover": {
+                    transform: "scale(1.05) rotate(0deg)",
+                  },
+                }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center", mb: 1 }}>
+                  <Avatar
+                    src={review.avatar}
+                    sx={{ width: 32, height: 32, mr: 1 }}
+                  />
+                  <Typography variant="body2" fontWeight="bold">
+                    {review.name}
+                  </Typography>
+                </Box>
+                <Rating value={review.rating} readOnly size="small" />
+                <Typography variant="body2" mt={1}>
+                  {review.content}
                 </Typography>
               </Box>
-              <Rating value={review.rating} readOnly size="small" />
-              <Typography variant="body2" mt={1}>
-                {review.content}
-              </Typography>
-            </Box>
-          ))}
+            ))}
+          </Box>
         </Box>
 
         <Button
@@ -272,12 +318,13 @@ function FeaturesSection() {
             px: 4,
             textTransform: "none",
             fontWeight: "bold",
-            boxShadow: "1px 6px 8px 0px #FFFFFF52 inset;",
+            boxShadow: "1px 6px 8px 0px #FFFFFF52 inset",
           }}
         >
           See More Reviews
         </Button>
       </Box>
+
       <Box
         id="services-explore"
         sx={{
