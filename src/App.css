@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    120deg,
+    #fdfbfb 0%,
+    #ebedee 30%,
+    #e3d1f7 60%,
+    #ffe4f4 90%,
+    #fceabb 100%
+  );
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
